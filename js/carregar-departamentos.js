@@ -1,4 +1,4 @@
-request("http://api.jsonbin.io/b/5b5c7c51f24d8943d04f1626/1",adicionaDepartamento);
+request("https://api.jsonbin.io/b/5b5c7c51f24d8943d04f1626/1",adicionaDepartamento);
 
 function toggleDepartamentos(){
     var containerDepartamento = document.querySelector(".container-esquerda__departamentos");
