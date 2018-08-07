@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Lista de Ramais</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/vars.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/botoes.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/random-colors.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600,700,800" rel="stylesheet">
+  </head>
+  <body>
+      <div id="id01" class="modal-login"></div>
+    <aside class="container-esquerda">
+      <header class="container-esquerda__cabecalho">
+
+          <a href="/"><img src="img/logo.png" class="container-esquerda__cabecalho__logo"></a>
+        <h1 class="container-esquerda__cabecalho__titulo">Lista de Ramais</h1>
+      </header>
+
+      <div class="container-esquerda__buscar">
+        <i class="container-esquerda__buscar__icone fas fa-search"></i>
+        <input type="text" name="filtro" id="filtrar-colaboradores"
+        placeholder="Digite o nome do colaborador..." autofocus>
+      </div>
+
+      <div class="container-esquerda__departamentos invisivel">
+        <button class="botao" id="mostrarTodos">Mostrar todos</button>
+        <!-- Carrega json  -->
+      </div>
+      <footer class="container-esquerda__rodape">
+          <a href="./cadastro"><i class="container-esquerda__rodape__icone fas fa-user-lock" onclick=""></i></a>
+      </footer>
+      <div class="container-esquerda__line"></div>
+    </aside>
+    <main class="container-direita">
+        <img src="./img/load-icon.gif" class="loading-icon">
+        <div class="container-direita__flex-cards">
+        <!-- Carrega json -->
+        </div>
+    </main>
+  </body>
+  <script src="js/password.js"></script>
+  <script src="js/buscar-json.js"></script>
+  <script src="js/carregar-usuarios.js"></script>
+  <script src="js/carregar-departamentos.js"></script>
+  <script src="js/filtraDepartamentos.js"></script>    
+  <script src="js/filtrar.js"></script>
+  <script>
+    function showIt() {  
+    var departamentos = document.querySelector(".container-esquerda__departamentos");
+    departamentos.classList.add("visivel", "fadeIn")
+    }  
+    setTimeout("showIt()", 1000); // after 2 sec
+  </script>
+  <script>       
+      function mostrarCadastro(){
+      document.getElementById('id02').style.display='block';
+  };        
+  </script>
+</html>
+

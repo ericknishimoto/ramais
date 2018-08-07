@@ -1,0 +1,20 @@
+.mensagem-erro{
+    text-align: left;
+}
+
+.btn-adicionar {
+    width: 100%;
+    font-size: 1rem;
+    margin: 0px;
+    margin-top: 20px;
+}
+
+.fa-home {
+	font-size: 1.5rem;
+	color: rgba(0, 0, 0, 0.233);  
+    transition: var(--transition-time);
+    cursor: pointer;
+}
+.fa-home:hover {
+	color: rgb(56, 137, 243);  
+}

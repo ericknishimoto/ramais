@@ -1,0 +1,43 @@
+.botao {
+	margin: 0.25rem;
+	padding: 0.5rem 1rem;
+	border-radius: 100px;
+	border: 1px solid grey;
+	color: grey;
+	background-color: transparent;
+	cursor: pointer;
+	transition: .5s;
+}
+
+.botao:hover{
+	border: 1px solid #666;
+	color: #666;
+	background-color: #eee;
+	box-shadow: 0px 1px 2px 0px var(--primary-color-shadow);
+	transition: 0.2s;
+}
+
+.botao:focus {
+	outline:0;
+}
+
+.botao-cadastro{
+	margin-top: 20px;
+	width:100%;
+}
+
+
+.botao-alterar:hover{
+	color: white;
+	background-color: #5cb85c;
+}
+
+
+.botao-apagar:hover {
+	color: white;
+	background-color: #c9302c;
+}
+
+
+
+

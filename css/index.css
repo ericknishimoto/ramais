@@ -1,0 +1,243 @@
+* {
+	box-sizing: border-box;
+ }
+
+html {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400; 
+	background-color: var(--third-color);
+}
+
+.container-esquerda {
+	position: fixed;
+	float: right;
+	flex-direction: column; 
+	align-content: center;
+	width: 40%;
+	min-width: 550px;
+	max-width: 760px;
+	height: 100vh;
+	background-color: white;
+	box-shadow: 0px 0px 10px 2px var(--primary-color-shadow);
+}
+
+.container-esquerda__cabecalho {
+	margin: 3rem;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.container-esquerda__cabecalho__logo{
+	width: 150px;
+	animation: bounceIn 1s;
+}
+
+.container-esquerda__cabecalho__titulo {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 2rem;
+	font-weight: 300;  
+	text-align: center;
+	color: var(--font-color); 
+}
+
+.container-esquerda__buscar {
+	margin-left: 19%;
+}
+
+.container-esquerda__buscar__icone {
+	position: relative;
+	left: 2rem;
+	font-size: 17px;
+	color: rgba(0, 0, 0, 0.233);  
+}
+
+.container-esquerda__departamentos {
+	width: 100%;
+	padding: 1rem;
+	padding-bottom: 15px;
+	text-align: center;
+	animation: aparece 1s;
+}
+
+.container-esquerda__rodape {
+	bottom: 0;
+	width: 100%;
+	padding: .5rem;
+	position: absolute;
+	background-color: var(--footer-color);
+}
+
+.container-esquerda__rodape__icone {
+	float: left;
+	font-size: 1.2rem;
+	color: #aaa;  
+	transition: var(--transition-time);
+}
+
+.container-esquerda__rodape__icone:hover {
+	color: gray;  
+	cursor: pointer;
+}
+
+.container-esquerda__line{
+	position: absolute;
+    top: 0;
+	padding: 2.5px;
+	width: 100%;
+	background-image: linear-gradient(-20deg, #079AE7 0%, #1D547B 100%);
+}
+
+.loading-icon {
+	margin-left: 5%;
+	margin-top: 10vh;
+	height: 150px;
+}
+
+.container-direita {
+	margin-left: 39%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	min-height: 600px;
+}
+
+/* CARDS */
+
+.container-direita__flex-cards {
+	padding-top: 2rem;
+	margin-bottom: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	background-color:var(--third-color);
+}
+
+.container__card {
+	margin: 1rem;
+	width: 320px;
+	max-height: 125px;
+	padding: 1rem;
+	border-radius: 10px;
+	background-color:#2980B9;
+	text-align: right;
+	color: white;
+	animation: aparece .5s;  
+}
+
+.user-icon {
+	float: left;
+	color: var(--icon-color);  
+	font-size: 20px;
+}
+
+li.info-nome {
+	font-size: 1rem;
+	color: white;
+	border-bottom: 1px solid white;
+	margin-bottom: 10px;
+}
+
+.container__card__li {
+	float: left;
+	font-weight: 400;
+}
+
+.container__card>li{
+	margin-bottom: 6px;
+}
+
+.container__card__dado {
+	clear: right;
+}
+
+.info-nome {
+	margin-bottom: 10px;
+	font-weight: 700;
+}
+
+@keyframes aparece {
+    0% {    
+      opacity: 0;
+    }
+    100% {    
+      opacity: 1;
+    }  
+}
+
+.fadeOut{
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.invisivel{
+	display: none;
+}
+
+.visivel{
+	display: block;
+}
+
+.aparecer {
+    -moz-animation: cssAnimation 0s ease-in 1s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 1s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 1s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 1s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow: visible;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:visible;
+    }
+}
+
+input {
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	margin: 0.5rem 0;
+    border: none;
+	border-radius: 10px;
+	padding: 10px;
+	width: 70%;
+	font-size: 1rem;
+	background: var(--primary-color);
+	border: 1px solid #ccc;
+	color: #777;
+	transition: all .4s;
+	padding-left: 2.5rem;
+  }
+
+input:focus{
+	border: 1px solid white;
+	box-shadow: 0px 0px 10px 0px #079AE7;
+	background-color: white;
+}
+
+input:hover{
+	border: 1px solid white;
+	box-shadow: 0px 0px 10px 0px #079AE7;
+	background-color: white;
+}
+
+input::placeholder {
+	color: #ccc;
+}
+
+

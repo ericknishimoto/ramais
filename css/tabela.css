@@ -1,0 +1,50 @@
+table{
+	width: 100%;
+	font-size: 13px;
+	font-weight: 400;
+	color: #666;
+}
+
+td, th, thead {
+	margin: 0;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+th, thead{
+	font-weight: bold;
+	background-color: gray;
+	font-size: 1rem;
+	color: white;
+	padding: 10px;
+}
+
+tr {
+	background: var(--third-color);
+}
+
+table tbody tr:nth-child(2n+1) {
+	background: white;
+}
+
+.icone-acao-alterar {
+	margin: 1rem 10px;
+	font-size: 1.5rem;
+	color: #2980B9;
+}
+
+.icone-acao-alterar:hover {
+	color: rgb(4, 134, 221);
+	cursor: pointer;
+}
+
+.icone-acao-apagar {
+	margin: 1rem 10px;
+	font-size: 1.5rem;
+	color: lightcoral; 
+}
+
+.icone-acao-apagar:hover {
+	color: orangered;  
+	cursor: pointer;
+}

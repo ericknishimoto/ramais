@@ -1,0 +1,208 @@
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.grupo{
+    margin-bottom: 10px;
+}
+
+.modal__cabecalho{
+    margin-bottom: 30px;
+}
+
+.modal__cabecalho__titulo{
+	font-size: 2rem;
+	font-weight: bold;  
+	text-align: center;
+	color: var(--font-color);
+}
+
+.modal-login {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.836); /* Black w/ opacity */   
+    background-image: linear-gradient(-10deg, rgb(4, 58, 87) 10%, rgb(7, 21, 32) 100%);
+    padding-top: 150px;
+}
+
+/* Modal Content/Box */
+.modal-content-login {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 30%; /* Could be more or less, depending on screen size */
+    max-width: 400px; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+}
+
+.modal-content-cadastro {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 450px; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+}
+.close-container {
+    display: flex;
+    position: relative;
+    margin-right: -15px;
+    text-align: left;
+    padding: 20px;
+    margin-bottom: -30px;
+    color: red;
+}
+
+.msg-erro {
+    color: red;
+    font-style: italic;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+.login {
+    padding: 0;
+    margin-bottom: 0px;
+}
+.container__sucesso{
+    height: 50px;
+    margin: 10px;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.container__password{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.container__cadastro{
+    text-align: left;
+    margin: 40px;
+}
+
+.campo{
+    padding-left: 10px;
+    width: 100%;
+}
+
+/* Full-width input fields */
+.modal-input[type=text], .modal-input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 1rem;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.3s;
+    animation: animatezoom 0.3s
+}
+
+.mensagem-erro{
+    text-align: left;
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+.select-departamento {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	margin: 0.5rem 0;
+    border: none;
+	border-radius: 10px;
+	padding: 10px;
+	width: 100%;
+	font-size: 1rem;
+	background: white;
+	border: 1px solid #DDD;
+	color: #777;
+    transition: all .4s;
+        background-image:
+          linear-gradient(45deg, transparent 50%, white 50%),
+          linear-gradient(135deg, white 50%, transparent 50%),
+          linear-gradient(-20deg, gray 0%, gray 100%);
+        background-position:
+          calc(100% - 20px) calc(1em + 2px),
+          calc(100% - 15px) calc(1em + 2px),
+          100% 0;
+        background-size:
+          5px 5px,
+          5px 5px,
+          2.5em 2.5em;
+        background-repeat: no-repeat;
+  }
+
+.select-departamento:focus{
+	border: 1px solid white;
+	box-shadow: 0px 0px 10px 0px #5D9CEC;
+	background-color: white;
+}
+
+.select-departamento:hover{
+	border: 1px solid white;
+	box-shadow: 0px 0px 10px 0px #5D9CEC;
+	background-color: white;
+}
+
+.select-departamento::placeholder {
+	color: #999;
+}

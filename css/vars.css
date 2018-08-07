@@ -1,0 +1,14 @@
+/* Variáveis CSS */
+
+:root {	
+	--primary-color: white;
+	--primary-color-hover: #888;
+	--primary-color-shadow: #53535398;
+	--secondary-color: #079AE7;
+	--third-color: #EBF0F3;
+	--footer-color: #EBF0F3;
+	--title-color: #1D547B;
+	--font-color: #777;
+	--shadow-color: #244d8f7e;
+	--transition-time: 0.3s;
+}
