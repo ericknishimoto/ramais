@@ -9,9 +9,9 @@ campoFiltro.addEventListener("input", function(){ //input: escuta o input de dad
         for (var i = 0; i < colaboradores.length; i++ ){
             var colaborador = colaboradores[i];
             var tdNome = colaborador.querySelector(".info-nome");
-            var nome = tdNome.textContent;
+            var nome = retira_acentos(tdNome.textContent);
 
-            var expressao = new RegExp(this.value, "i"); //new RegExp(valor, "i"): cria uma expressao regular, "i" = case insensitive;
+            var expressao = new RegExp(retira_acentos(this.value), "i"); //new RegExp(valor, "i"): cria uma expressao regular, "i" = case insensitive;
 
             if ( !expressao.test(nome) ){ //expressao.test(value): testa a expressao regular e retorna true or false;
                 colaborador.classList.add("invisivel");

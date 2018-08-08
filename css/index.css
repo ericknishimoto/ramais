@@ -61,6 +61,9 @@ html {
 }
 
 .container-esquerda__rodape {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	bottom: 0;
 	width: 100%;
 	padding: .5rem;
@@ -69,13 +72,23 @@ html {
 }
 
 .container-esquerda__rodape__icone {
-	float: left;
 	font-size: 1.2rem;
 	color: #aaa;  
 	transition: var(--transition-time);
 }
 
 .container-esquerda__rodape__icone:hover {
+	color: gray;  
+	cursor: pointer;
+}
+
+.container-esquerda__rodape__span{
+	font-size: 14px;
+	color: #aaa;  
+	transition: var(--transition-time);
+}
+
+.container-esquerda__rodape__span:hover {
 	color: gray;  
 	cursor: pointer;
 }
@@ -240,4 +253,33 @@ input::placeholder {
 	color: #ccc;
 }
 
+.container {
+	margin: auto;
+	width: 600px;
+}
 
+.container__release {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+	width: 100%;
+	color: #666;
+}
+
+.container__release td, .container__release th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.container__release tr:nth-child(even){
+	background-color: #ffffff;
+}
+
+.container__release th {
+    padding-top: 12px;
+	padding-bottom: 12px;
+	font-size: 1.2rem;
+	font-weight: bold;
+    text-align: left;
+    background-color: var(--title-color);
+    color: white;
+}
