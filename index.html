@@ -13,36 +13,46 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600,700,800" rel="stylesheet">
   </head>
   <body>
-      <div id="id01" class="modal-login"></div>
+    <!-- Sidebar com "navegação" por departamentos -->
     <aside class="container-esquerda">
+      
+      <!-- Cabeçalho com logo e título -->
       <header class="container-esquerda__cabecalho">
-
-          <a href="./"><img src="img/logo.png" class="container-esquerda__cabecalho__logo"></a>
+        <a href="./"><img src="img/logo.png" class="container-esquerda__cabecalho__logo"></a>
         <h1 class="container-esquerda__cabecalho__titulo">Lista de Ramais</h1>
       </header>
-
+      
+      <!-- Container com input de busca -->
       <div class="container-esquerda__buscar">
         <i class="container-esquerda__buscar__icone fas fa-search"></i>
         <input type="text" name="filtro" id="filtrar-colaboradores"
         placeholder="Digite o nome do colaborador..." autofocus>
       </div>
 
-      <div class="container-esquerda__departamentos invisivel">
+      <!-- Container com a "navegação" por departamentos -->
+      <nav class="container-esquerda__departamentos">
         <button class="botao" id="mostrarTodos">Mostrar todos</button>
-        <!-- Carrega json  -->
-      </div>
+        <!-- Local onde o json de departamentos é carregado  -->
+      </nav>
+
       <footer class="container-esquerda__rodape">
-          <a href="./cadastro"><i class="container-esquerda__rodape__icone fas fa-user-lock" onclick=""></i></a>
+          <a href="./cadastro.html"><i class="container-esquerda__rodape__icone fas fa-user-lock" onclick=""></i></a>
           <a href="./release"><span class="container-esquerda__rodape__span">Versão Beta</span></a>
       </footer>
+
+      <!-- Linha decorativa -->
       <div class="container-esquerda__line"></div>
+
     </aside>
+
+    <!-- Conteúdo principal com os cards -->
     <main class="container-direita">
         <img src="./img/load-icon.gif" class="loading-icon">
         <div class="container-direita__flex-cards">
-        <!-- Carrega json -->
+        <!-- Local onde o json de usuários é carregado  -->
         </div>
     </main>
+    
   </body>
   <script src="js/password.js"></script>
   <script src="js/buscar-json.js"></script>
@@ -51,17 +61,5 @@
   <script src="js/filtraDepartamentos.js"></script>    
   <script src="js/remover-acentos.js"></script>    
   <script src="js/filtrar.js"></script>
-  <script>
-    function showIt() {  
-    var departamentos = document.querySelector(".container-esquerda__departamentos");
-    departamentos.classList.add("visivel", "fadeIn")
-    }  
-    setTimeout("showIt()", 1000); // after 2 sec
-  </script>
-  <script>       
-      function mostrarCadastro(){
-      document.getElementById('id02').style.display='block';
-  };        
-  </script>
 </html>
 
