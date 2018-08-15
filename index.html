@@ -14,51 +14,36 @@
   </head>
   <body>
     <!-- Sidebar com "navegação" por departamentos -->
-    <aside class="container-esquerda">
+    <div class="container-central">
       
       <!-- Cabeçalho com logo e título -->
-      <header class="container-esquerda__cabecalho">
-        <a href="./"><img src="img/logo.png" class="container-esquerda__cabecalho__logo"></a>
-        <h1 class="container-esquerda__cabecalho__titulo">Lista de Ramais</h1>
+      <header class="container-central__cabecalho">
+        <a href="./"><img src="img/logo.png" class="container-central__cabecalho__logo"></a>
+        <h1 class="container-central__cabecalho__titulo">Lista de Ramais</h1>
       </header>
-      
-      <!-- Container com input de busca -->
-      <div class="container-esquerda__buscar">
-        <i class="container-esquerda__buscar__icone fas fa-search"></i>
-        <input type="text" name="filtro" id="filtrar-colaboradores"
-        placeholder="Digite o nome do colaborador..." autofocus>
-      </div>
+
+      <h2 class="container-central__cabecalho__subtitulo">Escolha uma localidade:</h2>
 
       <!-- Container com a "navegação" por departamentos -->
-      <nav class="container-esquerda__departamentos">
-        <button class="botao" id="mostrarTodos">Mostrar todos</button>
+      <nav class="container-central__localidades">
+        <a href="./parquegrafico.html"><button class="botao botao-localidades" id="mostrarTodos">Matriz</button></a>
+        <a href="./parquegrafico.html"><button class="botao botao-localidades" id="mostrarTodos">Editorial</button></a>
+        <a href="./parquegrafico.html"><button class="botao botao-localidades" id="mostrarTodos">Parque Gráfico</button></a>
+        <a href="./parquegrafico.html"><button class="botao botao-localidades" id="mostrarTodos">Filial SP</button></a>
+        <a href="./parquegrafico.html"><button class="botao botao-localidades" id="mostrarTodos">Filial BH</button></a>
         <!-- Local onde o json de departamentos é carregado -->
       </nav>
 
       <footer class="container-esquerda__rodape">
-          <a href="./cadastro.html"><i class="container-esquerda__rodape__icone fas fa-user-lock" onclick=""></i></a>
           <a href="./release"><span class="container-esquerda__rodape__span">Versão Beta</span></a>
       </footer>
 
-      <!-- Linha decorativa -->
+      <!-- Linha decorativa top-->
       <div class="container-esquerda__line"></div>
-    </aside>
-
-    <!-- Conteúdo principal com os cards -->
-    <main class="container-direita">
-        <img src="./img/load-icon.gif" class="loading-icon">
-        <div class="container-direita__flex-cards">
-        <!-- Local onde o json de usuários é carregado -->
-        </div>
-    </main>
+      <!-- Linha decorativa bottom-->
+      <div class="container-esquerda__line"></div>
+    </div>
 
   </body>
-  <script src="js/password.js"></script>
-  <script src="js/ambiente.js"></script>
-  <script src="js/acessar-json.js"></script>
-  <script src="js/carregar-departamentos.js"></script>
-  <script src="js/carregar-usuarios.js"></script>  
-  <script src="js/remover-acentos.js"></script>    
-  <script src="js/filtrar.js"></script>
 </html>
 
