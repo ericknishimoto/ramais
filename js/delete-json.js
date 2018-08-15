@@ -1,3 +1,5 @@
+//Para deletar json remoto
+
 let req = new XMLHttpRequest();
 
 req.onreadystatechange = () => {
