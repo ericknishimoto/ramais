@@ -1,17 +1,5 @@
-request("https://api.jsonbin.io/b/5b5c7c51f24d8943d04f1626/1",adicionaDepartamento);
-
-function toggleDepartamentos(){
-    var containerDepartamento = document.querySelector(".container-esquerda__departamentos");
-    if (containerDepartamento.style.display == "" || containerDepartamento.style.display == "none"){
-        containerDepartamento.style.display = "block";
-        var botaoDepartamento = document.querySelector(".botao-departamentos");
-        botaoDepartamento.textContent = "Ocultar todos";
-    } else {
-        containerDepartamento.style.display = "none";
-        var botaoDepartamento = document.querySelector(".botao-departamentos");
-        botaoDepartamento.textContent = "Mostar departamentos";
-    }
-}
+//executa a funcao request, passando o endereço do Json, mais uma funcao e a chave da json privada
+request(jsonDepartamentos,adicionaDepartamento, key);
 
 document.getElementById("mostrarTodos").addEventListener("click", function(){
     filtraDepartamentos(this.textContent);
@@ -33,28 +21,39 @@ function montaBotao(dado, classe){
     return button;
 }
 
-/*function adicionaUsuarioNaTabela(dado) {
-    var usuarioTr = montaTr(dado);
-    var tabela = document.querySelector("#tabela-ramais");
-    tabela.appendChild(usuarioTr);
+function filtraDepartamentos(departamento){
+    var colaboradores = document.querySelectorAll(".container__card");
+    var div = document.querySelector(".container-direita__flex-cards");
+    var botaoTodos = document.querySelector("#mostrarTodos");
+    var todos = botaoTodos.textContent;
+
+    for (var i = 0; i < colaboradores.length; i++ ){
+        var colaborador = colaboradores[i];
+        var rotulo = colaborador.querySelector(".info-departamento");
+        var departamentoLista = rotulo.textContent;
+
+        if ( departamentoLista != departamento  && departamento != todos){ //expressao.test(value): testa a expressao regular e retorna true or false;
+            colaborador.classList.add("invisivel");
+        }else if( departamento == "Todos"){
+            colaborador.classList.remove("invisivel");
+            div.classList.remove("invisivel");
+        }else{
+            colaborador.classList.remove("invisivel");
+            div.classList.remove("invisivel");
+        }
+    }
+
 }
 
-function montaTr(dado){
-
-    var usuarioTr = document.createElement("tr"); //.createElement: criar um elemento HTML definido em ();
-    usuarioTr.classList.add("colaborador");
-    usuarioTr.appendChild(montaTd(dado.departamento, "info-departamento")); //.appendChild: insere como filho o definido em ();
-    usuarioTr.appendChild(montaTd(dado.nome, "info-nome")); //.appendChild: insere como filho o definido em ();
-    usuarioTr.appendChild(montaTd(dado.ramal, "info-ramal")); //.appendChild: insere como filho o definido em ();
-    usuarioTr.appendChild(montaTd(dado.celular, "info-celular")); //.appendChild: insere como filho o definido em ();
-    return usuarioTr;
-}
-
-function montaTd(dado, classe){
-    var td = document.createElement("td");
-    td.textContent = dado;
-    td.classList.add(classe);
-
-    return td;
-}
-*/
+// function toggleDepartamentos(){
+//     var containerDepartamento = document.querySelector(".container-esquerda__departamentos");
+//     if (containerDepartamento.style.display == "" || containerDepartamento.style.display == "none"){
+//         containerDepartamento.style.display = "block";
+//         var botaoDepartamento = document.querySelector(".botao-departamentos");
+//         botaoDepartamento.textContent = "Ocultar todos";
+//     } else {
+//         containerDepartamento.style.display = "none";
+//         var botaoDepartamento = document.querySelector(".botao-departamentos");
+//         botaoDepartamento.textContent = "Mostar departamentos";
+//     }
+// }

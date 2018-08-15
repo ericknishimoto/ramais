@@ -1,8 +1,9 @@
-request("https://api.jsonbin.io/b/5b5e35aee013915146c937e5",listaUsuario);
+//executa a funcao request, passando o endereço do Json, mais uma funcao e a chave da json privada
+request(jsonColaboradores,listaInicialUsuario, key);
 
 var cadastrandoUsuario = true;
 
-function listaUsuario(dado) {
+function listaInicialUsuario(dado) {
     var colaboradorTr = montaTr(dado);
     var tr = document.querySelector("#tabela-usuarios");
     tr.appendChild(colaboradorTr);
@@ -18,7 +19,6 @@ function montaTr(dado){
     colaboradorTr.appendChild(montaTd(dado.ramal,"info-ramal"));
     colaboradorTr.appendChild(montaTd(dado.celular,"info-celular"));
     colaboradorTr.appendChild(montaTdBotao("info-acoes",dado,dado.nome));
-
 
     return colaboradorTr;
 }
@@ -42,12 +42,9 @@ function montaBotaoAlterar(classe, classe1, classe2,nome){
     var botao = document.createElement("i");
     botao.classList.add(classe,classe1, classe2);
     botao.setAttribute("title","Alterar dados");
-    botao.addEventListener("click", function() {
-
+    botao.addEventListener("click", function() {        
         alteraUsuario(nome);
-      
     })
-
     return botao;
 }
 
@@ -62,12 +59,11 @@ function montaBotaoApagar(classe, classe1, classe2,dado){
             apagarUsuario(dado);
             apagaTabela();
             apagaBuscar();
-            request("https://api.jsonbin.io/b/5b5e35aee013915146c937e5",listaUsuario); 
+            request(jsonColaboradores,listaInicialUsuario, key); 
         } else {
             return;
         }   
     })
-
     return botao;
 }
 

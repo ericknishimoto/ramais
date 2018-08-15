@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/botoes.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   </head>
   <body>
     <!-- Sidebar com "navegação" por departamentos -->
@@ -32,7 +32,7 @@
       <!-- Container com a "navegação" por departamentos -->
       <nav class="container-esquerda__departamentos">
         <button class="botao" id="mostrarTodos">Mostrar todos</button>
-        <!-- Local onde o json de departamentos é carregado  -->
+        <!-- Local onde o json de departamentos é carregado -->
       </nav>
 
       <footer class="container-esquerda__rodape">
@@ -42,23 +42,22 @@
 
       <!-- Linha decorativa -->
       <div class="container-esquerda__line"></div>
-
     </aside>
 
     <!-- Conteúdo principal com os cards -->
     <main class="container-direita">
         <img src="./img/load-icon.gif" class="loading-icon">
         <div class="container-direita__flex-cards">
-        <!-- Local onde o json de usuários é carregado  -->
+        <!-- Local onde o json de usuários é carregado -->
         </div>
     </main>
 
   </body>
   <script src="js/password.js"></script>
-  <script src="js/buscar-json.js"></script>
-  <script src="js/carregar-usuarios.js"></script>
+  <script src="js/ambiente.js"></script>
+  <script src="js/acessar-json.js"></script>
   <script src="js/carregar-departamentos.js"></script>
-  <script src="js/filtraDepartamentos.js"></script>    
+  <script src="js/carregar-usuarios.js"></script>  
   <script src="js/remover-acentos.js"></script>    
   <script src="js/filtrar.js"></script>
 </html>
