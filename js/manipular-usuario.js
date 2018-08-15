@@ -128,21 +128,6 @@ function validaUsuario(usuario) {
 
 function alteraUsuario(nome){
 
-    var element = document.getElementById('ramal');
-    var maskOptions = {
-      mask: '0000/0000'
-    };
-    var mask = new IMask(element, maskOptions);
-
-    var element = document.getElementById('celular');
-    var maskOptions = {
-      mask: '(00)00000-0000'
-    };
-    var mask = new IMask(element, maskOptions);
-
-    let tituloForm = document.querySelector("#titulo-form");
-    tituloForm.textContent = "Alterar cadastro";
-
     for ( var i = 0; i < listaInicial.length; i++) {
 
         if (listaInicial[i].nome == nome){
