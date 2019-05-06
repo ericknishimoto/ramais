@@ -5,59 +5,78 @@
 html {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400; 
+	background-color: var(--third-color);
+	animation: aparece 1s;
+}
+
+.container-esquerda {
+	position: fixed;
+	float: right;
+	flex-direction: column; 
+	align-content: center;
+	width: 40%;
+	min-width: 550px;
+	max-width: 760px;
+	height: 100vh;
 	background-color: white;
+	box-shadow: 0px 0px 10px 2px var(--primary-color-shadow);
 }
 
-html::after{
-	content: "";
-	background-image: url("../img/bg.jpg");
-	opacity: 0.6;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	position: absolute;
-	z-index: -1;   
-}
-
-.container-central__cabecalho {
-	margin: 5rem;
+.container-esquerda__cabecalho {
+	margin: 3rem;
 	margin-bottom: 1rem;
 	text-align: center;
 }
 
-.container-central__cabecalho__logo{
-	width: 10rem;
+.container-esquerda__cabecalho__logo{
+	width: 150px;
 }
 
-.container-central__cabecalho__titulo {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+.container-esquerda__cabecalho__icone{
+	position: absolute;
+	top: 1.2rem;
+	left: 1rem;
 	font-size: 2rem;
-	font-weight: 400;  
-	text-align: center;
-	color: var(--font-color); 
+	color: rgba(128, 128, 128, 0.336); 
+	transition: var(--transition-time);
 }
 
-.container-central__cabecalho__subtitulo{
-	margin-top: 2rem;
-	font-size: 1rem;
+i.container-esquerda__cabecalho__icone.fas.fa-chevron-circle-left:hover{
+	color: rgba(128, 128, 128, 0.623); 
+	cursor: pointer;
+}
+
+.container-esquerda__cabecalho__titulo {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 2rem;
 	font-weight: 300;  
 	text-align: center;
 	color: var(--font-color); 
 }
 
-.container-central__localidades {
+.container-esquerda__buscar {
+	margin-left: 19%;
+}
+
+.container-esquerda__buscar__icone {
+	position: relative;
+	left: 2rem;
+	font-size: 17px;
+	color: rgba(0, 0, 0, 0.233);  
+}
+
+.container-esquerda__departamentos {
 	width: 100%;
 	padding: 1rem;
 	padding-bottom: 15px;
 	text-align: center;
-	animation: aparece .5s;
+	animation: aparece 1s;
 }
 
 .container-esquerda__rodape {
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
 	align-items: center;
 	bottom: 0;
 	width: 100%;
@@ -94,6 +113,12 @@ html::after{
 	padding: 2.5px;
 	width: 100%;
 	background-image: linear-gradient(-20deg, #079AE7 0%, #1D547B 100%);
+}
+
+.loading-icon {
+	margin-left: 5%;
+	margin-top: 10vh;
+	height: 150px;
 }
 
 .container-direita {

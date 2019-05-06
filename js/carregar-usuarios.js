@@ -1,17 +1,18 @@
-request("https://api.jsonbin.io/b/5b5e35aee013915146c937e5",adicionaUsuario);
+//executa a funcao request, passando o endereço do Json, mais uma funcao e a chave da json privada
+request(jsonColaboradores,adicionaUsuario, key);
 
 function adicionaUsuario(dado) {
+    //recebe um item do json em "dado"
     var colaboradorUl = montaUl(dado);
     var ul = document.querySelector(".container-direita__flex-cards");
     ul.appendChild(colaboradorUl);
 }
 
 function montaUl(dado){
-
+//Cria uma ul em html
     var colaboradorUl = document.createElement("ul");
     colaboradorUl.classList.add("container__card");
 
-    //colaboradorUl.appendChild(montaLiRotulo("Nome:", "container__card__li"));
     colaboradorUl.appendChild(montaIRotulo("", "fas","fa-user", "user-icon"));
     colaboradorUl.appendChild(montaLiDado(dado.nome, "info-nome"));
 
@@ -60,29 +61,3 @@ function montaH2(dado, classe){
     h2.classList.add(classe);
     return h2;
 }
-
-/*function adicionaUsuarioNaTabela(dado) {
-    var usuarioTr = montaTr(dado);
-    var tabela = document.querySelector("#tabela-ramais");
-    tabela.appendChild(usuarioTr);
-}
-
-function montaTr(dado){
-
-    var usuarioTr = document.createElement("tr"); //.createElement: criar um elemento HTML definido em ();
-    usuarioTr.classList.add("colaborador");
-    usuarioTr.appendChild(montaTd(dado.departamento, "info-departamento")); //.appendChild: insere como filho o definido em ();
-    usuarioTr.appendChild(montaTd(dado.nome, "info-nome")); //.appendChild: insere como filho o definido em ();
-    usuarioTr.appendChild(montaTd(dado.ramal, "info-ramal")); //.appendChild: insere como filho o definido em ();
-    usuarioTr.appendChild(montaTd(dado.celular, "info-celular")); //.appendChild: insere como filho o definido em ();
-    return usuarioTr;
-}
-
-function montaTd(dado, classe){
-    var td = document.createElement("td");
-    td.textContent = dado;
-    td.classList.add(classe);
-
-    return td;
-}
-*/

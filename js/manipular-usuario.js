@@ -1,4 +1,5 @@
 var botaoAdicionar = document.querySelector("#adicionar-usuario");
+
 botaoAdicionar.addEventListener("click", function(){ //.addEventListener: adiciona um escutador de evento definido em ("evento", function *anonima ou ñ*);    
     event.preventDefault(); // event.preventDefault: previne o evento padrão do comportamento do browser;
     
@@ -6,7 +7,6 @@ botaoAdicionar.addEventListener("click", function(){ //.addEventListener: adicio
 
         var form = document.querySelector("#form-adiciona");
         var usuario = obtemUsuarioDoFormulario(form);
-    
         var erros = validaUsuario(usuario);
 
         if (erros.length > 0){
@@ -14,10 +14,8 @@ botaoAdicionar.addEventListener("click", function(){ //.addEventListener: adicio
             return; // return vazio, da um break na function;
         }
     
-        listaDeEnvio = adicionaUsuarioLista(listaInicial,usuario);
-    
-        enviarParaJson(listaDeEnvio);
-    
+        listaInicialDeEnvio = adicionaUsuarioLista(listaInicial,usuario);
+        enviarParaJson(listaInicialDeEnvio);
         document.getElementById('id02').style.display='none';
         document.getElementById('id03').style.display='block';
     
@@ -28,7 +26,7 @@ botaoAdicionar.addEventListener("click", function(){ //.addEventListener: adicio
     
         apagaTabela();
         apagaBuscar();
-        request("https://api.jsonbin.io/b/5b5e35aee013915146c937e5",listaUsuario);
+        request(jsonColaboradores,listaInicialUsuario, key);
 
     } else { //alterando usuario
 
@@ -75,7 +73,7 @@ botaoAdicionar.addEventListener("click", function(){ //.addEventListener: adicio
     
         apagaTabela();
         apagaBuscar();
-        request("https://api.jsonbin.io/b/5b5e35aee013915146c937e5",listaUsuario);
+        request(jsonColaboradores,listaInicialUsuario, key);
 
     }
 
@@ -126,4 +124,38 @@ function validaUsuario(usuario) {
     }
 
     return erros;
+}
+
+function alteraUsuario(nome){
+
+    for ( var i = 0; i < listaInicial.length; i++) {
+
+        if (listaInicial[i].nome == nome){
+            var nome = document.querySelector("#nome");
+            nome.value = listaInicial[i].nome;
+
+            var nome = document.querySelector("#nomeHidden");
+            nomeHidden.value = listaInicial[i].nome;
+
+            var departamento = document.querySelector("#departamento-item");
+            departamento.textContent = listaInicial[i].departamento;
+
+            var ramal = document.querySelector("#ramal");
+            ramal.value = listaInicial[i].ramal;
+
+            var celular = document.querySelector("#celular");
+            celular.value = listaInicial[i].celular;
+
+            document.getElementById('id02').style.display='block';
+
+            cadastrandoUsuario = false;
+        }
+    }
+    
+}
+
+function apagarUsuario(colaborador){
+    listaInicial.splice( listaInicial.indexOf(colaborador), 1 );
+    enviarParaJson(listaInicial);
+    document.getElementById('id04').style.display='block';
 }

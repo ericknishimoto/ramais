@@ -1,3 +1,5 @@
+//Para deletar json remoto
+
 let req = new XMLHttpRequest();
 
 req.onreadystatechange = () => {
@@ -6,6 +8,6 @@ req.onreadystatechange = () => {
   }
 };
 
-req.open("DELETE", "http://api.jsonbin.io/b/5b5ba256dc72f955bb7975e3", true);
+req.open("DELETE", "https://api.jsonbin.io/b/5b5ba256dc72f955bb7975e3", true);
 req.setRequestHeader("secret-key", "$2a$10$RMCo1uUgCJKiU.CEXpAZbutR2tOFDnFUdyMY9hUKWU8zajL9EAeHO");
 req.send();

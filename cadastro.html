@@ -8,20 +8,23 @@
       }
     </script>
 		<meta charset="UTF-8">
-		<title>Lista de Ramais</title>
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Pq. Gráfico - Lista de Ramais</title>
+		<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/vars.css">
     <link rel="stylesheet" type="text/css" href="css/modal.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/botoes.css">
     <link rel="stylesheet" type="text/css" href="css/tabela.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"
+  integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ="
+  crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <script src="https://unpkg.com/imask"></script>
   </head>
-  <body>        
+  <body>       
+    <!-- Modal senha -->
     <div id="id01" class="modal-login">
       <form class="modal-content-login animate">
         <div class="close-container login">
@@ -34,6 +37,7 @@
         </div>
       </form>
     </div>  
+    <!-- Modal cadastro de colaborador -->
     <div id="id02" class="modal">
       <form id="form-adiciona" class="modal-content-cadastro animate">
         <div class="close-container">
@@ -42,7 +46,7 @@
         </div>
         <div class="container__cadastro">
             <header class="modal__cabecalho">
-                <h1 id="titulo-form" class="modal__cabecalho__titulo">Cadastrar de usuário</h1>
+                <h1 id="titulo-form" class="modal__cabecalho__titulo">Cadastrar de colaborador</h1>
             </header>
           <div class="grupo">
             <label for="nome">Nome:</label>
@@ -92,12 +96,13 @@
             <div class="grupo">
               <label for="celular">Celular (opcional):</label>
               <input id="celular" type="text"
-              maxlength="14" placeholder="Digite o celular" class="campo campo-medio">
+               placeholder="Digite o celular" class="campo campo-medio">
             </div>
             <button id="adicionar-usuario" class="botao botao-cadastro">Confirmar</button>
         </div>
       </form>
     </div>    
+    <!-- Modal msg cadastrado com sucesso -->
     <div id="id03" class="modal">
       <form class="modal-content-login animate">
         <div class="close-container">
@@ -108,6 +113,7 @@
         </div>
       </form>
     </div>  
+    <!-- Modal msg apagado com sucesso. -->
     <div id="id04" class="modal">
       <form class="modal-content-login animate">
         <div class="close-container">
@@ -118,6 +124,7 @@
         </div>
       </form>
     </div>  
+    <!-- Modal msg alterado com sucesso -->
     <div id="id05" class="modal">
       <form class="modal-content-login animate">
         <div class="close-container">
@@ -128,30 +135,38 @@
         </div>
       </form>
     </div>     
-    <aside class="container-esquerda">
-        <header class="container-esquerda__cabecalho">
-            <a href="/index.html"><img src="img/logo.png" class="container-esquerda__cabecalho__logo"></a>
-            <h1 class="container-esquerda__cabecalho__titulo">Lista de Ramais</h1>
-          </header>
     
+    <!-- Sidebar com "navegação" por departamentos -->
+    <aside class="container-esquerda">
+      <!-- Cabeçalho com logo e título -->
+      <header class="container-esquerda__cabecalho">
+        <a href="./"><img src="img/logo.png" class="container-esquerda__cabecalho__logo"></a>
+        <h1 class="container-esquerda__cabecalho__titulo">Lista de Ramais</h1>
+      </header>
+    
+      <!-- Container com input de busca -->
+      <div class="container-esquerda__buscar">
+        <i class="container-esquerda__buscar__icone fas fa-search"></i>
+        <input type="text" name="filtro" id="filtrar-colaboradores"
+        placeholder="Digite o nome do colaborador...">
+      </div>
 
-        <div class="container-esquerda__buscar">
-          <i class="container-esquerda__buscar__icone fas fa-search"></i>
-          <input type="text" name="filtro" id="filtrar-colaboradores"
-          placeholder="Digite o nome do colaborador...">
-        </div>
+      <!-- Container com botoes de ação -->
+      <div class="container-esquerda__departamentos">
+        <button class="botao" onclick="mostrarCadastro()" title="Cadastrar novo usuário">Cadastrar novo</button>        
+        <a title="Voltar para o início" href="./"><button class="botao" title="Cadastrar novo usuário">Voltar</button></a>
+      </div>
 
-        <div class="container-esquerda__departamentos">
-          <button class="botao" onclick="mostrarCadastro()" title="Cadastrar novo usuário">Cadastrar novo</button>        
-          <a title="Voltar para o início" href="./"><button class="botao" title="Cadastrar novo usuário">Voltar</button></a>
-          <!-- Carrega json  -->
-        </div>
+      <footer class="container-esquerda__rodape">
+        <a title="Voltar para o início" href="./"><i class="container-esquerda__rodape__icone fas fa-home"></i></a>
+        <a href="./release"><span class="container-esquerda__rodape__span">Versão Beta</span></a>
+      </footer>
 
-        <footer class="container-esquerda__rodape">
-          <a title="Voltar para o início" href="./index.html"><i class="container-esquerda__rodape__icone fas fa-home"></i></a>
-        </footer>
-        <div class="container-esquerda__line"></div>
+      <!-- Linha decorativa -->
+      <div class="container-esquerda__line"></div>
     </aside>
+
+    <!-- Conteúdo principal com a tabela de colaboradores -->
     <main class="container-direita">
         <img src="./img/load-icon.gif" class="loading-icon">
         <table id="tabela-geral">
@@ -164,38 +179,20 @@
                 <th style="width: 15%">AÇÕES</th>
               </tr>
             </thead>
-              <tbody id="tabela-usuarios">
-                <!-- *Carrega json* -->
-              </tbody>
-          </table>
+            <tbody id="tabela-usuarios">
+            <!-- Local onde o json de usuários é carregado  -->
+            </tbody>
+        </table>
     </main>
+    
   </body>
   <script src="js/password.js"></script>
+  <script src="js/ambiente.js"></script>
   <script src="js/modal.js"></script>
-  <script src="js/buscar-json.js"></script>
+  <script src="js/acessar-json.js"></script>
+  <script src="js/remover-acentos.js"></script> 
   <script src="js/filtrar-tabela.js"></script>
-  <script src="js/carregar-tabela-usuarios.js"></script>
-  <script src="js/adicionar-usuario.js"></script>
-  <script src="js/apagar-usuario.js"></script>
-  <script src="js/alterar-usuario.js"></script>
-  <script src="js/enviar.js"></script>
-  <script>       
-    function mostrarCadastro(){
-    document.getElementById('id02').style.display='block';
-    var titulo = document.querySelector(".modal__cabecalho__titulo");
-      titulo.textContent= "Cadastrar usuário";
-
-    var element = document.getElementById('ramal');
-    var maskOptions = {
-      mask: '0000/0000'
-    };
-    var mask = new IMask(element, maskOptions);
-
-        var element = document.getElementById('celular');
-    var maskOptions = {
-      mask: '(00)00000-0000'
-    };
-    var mask = new IMask(element, maskOptions);
-};        
-  </script>    
+  <script src="js/manipular-usuario.js"></script>
+  <script src="js/carregar-tabela-usuarios.js"></script>  
+  <script src="js/enviar-json.js"></script> 
 </html>
