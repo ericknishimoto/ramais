@@ -23,9 +23,13 @@ html {
 }
 
 .container-esquerda__cabecalho {
-	margin: 3rem;
-	margin-bottom: 1rem;
+	font-family: 'Lobster', cursive;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	font-size: 5rem;
+	font-weight: 400;  
 	text-align: center;
+	color: var(--font-color); 
 }
 
 .container-esquerda__cabecalho__logo{
@@ -49,7 +53,7 @@ i.container-esquerda__cabecalho__icone.fas.fa-chevron-circle-left:hover{
 .container-esquerda__cabecalho__titulo {
 	margin-top: 20px;
 	margin-bottom: 10px;
-	font-size: 2rem;
+	font-size: 3rem;
 	font-weight: 300;  
 	text-align: center;
 	color: var(--font-color); 

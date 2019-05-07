@@ -31,9 +31,10 @@ html::after{
 }
 
 .container-central__cabecalho__titulo {
+	font-family: 'Lobster', cursive;
 	margin-top: 2rem;
 	margin-bottom: 2rem;
-	font-size: 2rem;
+	font-size: 4rem;
 	font-weight: 400;  
 	text-align: center;
 	color: var(--font-color); 
