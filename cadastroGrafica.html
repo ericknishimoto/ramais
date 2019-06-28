@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+    <script>
+      window.onload = function(){
+      document.getElementById('tabela-geral').style.display='none';    
+      document.getElementById('id01').style.display='block';
+      }
+    </script>
+		<meta charset="UTF-8">
+    <title>Pq. Gráfico - Lista de Ramais</title>
+		<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/vars.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/botoes.css">
+    <link rel="stylesheet" type="text/css" href="css/tabela.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"
+  integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ="
+  crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  </head>
+  <body>       
+    <!-- Modal senha -->
+    <div id="id01" class="modal-login">
+      <form class="modal-content-login animate">
+        <div class="close-container login">
+          <span class="msg-erro">Digite a senha para acessar:</span>
+          <span onclick="location.href = './'" class="close" title="Fechar">&times;</span>
+        </div>
+        <div class="container__password">
+          <input type="password" class="modal-input" placeholder="Digite a senha" id="senha" required autofocus>
+          <button class="botao" onclick="password()">Login</button>
+        </div>
+      </form>
+    </div>  
+    <!-- Modal cadastro de colaborador -->
+    <div id="id02" class="modal">
+      <form id="form-adiciona" class="modal-content-cadastro animate">
+        <div class="close-container">
+            <ul id="mensagens-erro"></ul>
+            <span onclick="document.getElementById('id02').style.display='none'" id="botaoClose" class="close" title="Fechar">&times;</span>
+        </div>
+        <div class="container__cadastro">
+            <header class="modal__cabecalho">
+                <h1 id="titulo-form" class="modal__cabecalho__titulo">Cadastrar de colaborador</h1>
+            </header>
+          <div class="grupo">
+            <label for="nome">Nome:</label>
+            <input type="hidden" id="nomeHidden" name="nomeHidden" value="">
+            <input id="nome" name="nome" type="text"
+            maxlength="25" placeholder="Digite o nome" class="campo">
+          </div>
+          <div class="grupo">
+            <label for="departamento">Departamento:</label>
+            <select id="departamento" class="select-departamento">
+              <option id="departamento-item"></option>
+              <option id="departamento-item">Acabamento</option>
+              <option id="departamento-item">Adm. Patrimonial</option>
+              <option id="departamento-item">Almoxarifado</option>
+              <option id="departamento-item">Ambulatório</option>
+              <option id="departamento-item">AST</option>
+              <option id="departamento-item">CCFR</option>
+              <option id="departamento-item">Comercial</option>
+              <option id="departamento-item">Coord./Gerência</option>
+              <option id="departamento-item">CQ</option>
+              <option id="departamento-item">DHO</option>
+              <option id="departamento-item">Diversos</option>
+              <option id="departamento-item">Embalagem</option>
+              <option id="departamento-item">Expedição</option>
+              <option id="departamento-item">Faturamento</option>
+              <option id="departamento-item">Impressão</option>
+              <option id="departamento-item">Impre. Digital</option>
+              <option id="departamento-item">Jurídico</option>
+              <option id="departamento-item">Logística</option>
+              <option id="departamento-item">Man. Industrial</option>
+              <option id="departamento-item">Man. Predial</option>
+              <option id="departamento-item">PCP</option>
+              <option id="departamento-item">Pré-impressão</option>
+              <option id="departamento-item">Recebimento</option>
+              <option id="departamento-item">Sala de Reunião</option>
+              <option id="departamento-item">Seg. do Trabalho</option>
+              <option id="departamento-item">Serv. Externos</option>
+              <option id="departamento-item">Suprimentos</option>
+              <option id="departamento-item">TI</option>           
+            </select>
+          </div>
+            <div class="grupo">
+              <label for="ramal">Ramal:</label>
+              <input id="ramal" name="ramal" type="text"
+              maxlength="9" placeholder="Digite o ramal" class="campo campo-medio">
+            </div>
+            <div class="grupo">
+              <label for="celular">Celular (opcional):</label>
+              <input id="celular" type="text"
+               placeholder="Digite o celular" class="campo campo-medio">
+            </div>
+            <button id="adicionar-usuario" class="botao botao-cadastro">Confirmar</button>
+        </div>
+      </form>
+    </div>    
+    <!-- Modal msg cadastrado com sucesso -->
+    <div id="id03" class="modal">
+      <form class="modal-content-login animate">
+        <div class="close-container">
+          <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Fechar">&times;</span>
+        </div>
+        <div class="container__sucesso">
+          <span class="mensagem-sucesso">Cadastrado com sucesso.</span>
+        </div>
+      </form>
+    </div>  
+    <!-- Modal msg apagado com sucesso. -->
+    <div id="id04" class="modal">
+      <form class="modal-content-login animate">
+        <div class="close-container">
+          <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Fechar">&times;</span>
+        </div>
+        <div class="container__sucesso">
+          <span class="mensagem-sucesso">Apagado com sucesso.</span>
+        </div>
+      </form>
+    </div>  
+    <!-- Modal msg alterado com sucesso -->
+    <div id="id05" class="modal">
+      <form class="modal-content-login animate">
+        <div class="close-container">
+          <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Fechar">&times;</span>
+        </div>
+        <div class="container__sucesso">
+          <span class="mensagem-sucesso">Alterado com sucesso.</span>
+        </div>
+      </form>
+    </div>     
+    
+    <!-- Sidebar com "navegação" por departamentos -->
+    <aside class="container-esquerda">
+      <!-- Cabeçalho com logo e título -->
+      <header class="container-esquerda__cabecalho">
+        <a href="./"><img src="img/logo.png" class="container-esquerda__cabecalho__logo"></a>
+        <h1 class="container-esquerda__cabecalho__titulo">Lista de Ramais</h1>
+        <h1 class="container-esquerda__cabecalho__subtitulo">Pq. Gráfico</h1>
+      </header>
+    
+      <!-- Container com input de busca -->
+      <div class="container-esquerda__buscar">
+        <i class="container-esquerda__buscar__icone fas fa-search"></i>
+        <input type="text" name="filtro" id="filtrar-colaboradores"
+        placeholder="Digite o nome do colaborador...">
+      </div>
+
+      <!-- Container com botoes de ação -->
+      <div class="container-esquerda__departamentos">
+        <button class="botao" onclick="mostrarCadastro()" title="Cadastrar novo usuário">Cadastrar novo</button>        
+        <a title="Voltar para o início" href="./"><button class="botao" title="Cadastrar novo usuário">Voltar</button></a>
+      </div>
+
+      <footer class="container-esquerda__rodape">
+        <a title="Voltar para o início" href="./"><i class="container-esquerda__rodape__icone fas fa-home"></i></a>
+        <a href="./release"><span class="container-esquerda__rodape__span">Versão Beta</span></a>
+      </footer>
+
+      <!-- Linha decorativa -->
+      <div class="container-esquerda__line"></div>
+    </aside>
+
+    <!-- Conteúdo principal com a tabela de colaboradores -->
+    <main class="container-direita">
+        <img src="./img/load-icon.gif" class="loading-icon">
+        <table id="tabela-geral">
+            <thead>
+              <tr>
+                <th style="width: 35%">NOME</th>
+                <th>DEPARTAMENTO</th>
+                <th style="width: 10%">RAMAL</th>
+                <th>CELULAR</th>
+                <th style="width: 15%">AÇÕES</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-usuarios">
+            <!-- Local onde o json de usuários é carregado  -->
+            </tbody>
+        </table>
+    </main>
+    
+  </body>
+  <script src="js/password.js"></script>
+  <script src="js/ambienteGrafica.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/acessar-json.js"></script>
+  <script src="js/remover-acentos.js"></script> 
+  <script src="js/filtrar-tabela.js"></script>
+  <script src="js/manipular-usuario.js"></script>
+  <script src="js/carregar-tabela-usuarios.js"></script>  
+  <script src="js/enviar-json.js"></script> 
+</html>

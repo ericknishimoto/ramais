@@ -23,7 +23,6 @@ html {
 }
 
 .container-esquerda__cabecalho {
-	font-family: 'Lobster', cursive;
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 	font-size: 5rem;
@@ -51,9 +50,19 @@ i.container-esquerda__cabecalho__icone.fas.fa-chevron-circle-left:hover{
 }
 
 .container-esquerda__cabecalho__titulo {
+	font-family: 'Lobster', cursive;
 	margin-top: 20px;
 	margin-bottom: 10px;
 	font-size: 3rem;
+	font-weight: 300;  
+	text-align: center;
+	color: var(--font-color); 
+}
+
+.container-esquerda__cabecalho__subtitulo {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 2rem;
 	font-weight: 300;  
 	text-align: center;
 	color: var(--font-color); 
@@ -148,7 +157,7 @@ i.container-esquerda__cabecalho__icone.fas.fa-chevron-circle-left:hover{
 .container__card {
 	margin: 1rem;
 	width: 320px;
-	max-height: 125px;
+	/* max-height: 125px; */
 	padding: 1rem;
 	border-radius: 10px;
 	background-color:#2980B9;
@@ -164,7 +173,7 @@ i.container-esquerda__cabecalho__icone.fas.fa-chevron-circle-left:hover{
 }
 
 li.info-nome {
-	font-size: 1rem;
+	font-size: .9rem;
 	color: white;
 	border-bottom: 1px solid white;
 	margin-bottom: 10px;
