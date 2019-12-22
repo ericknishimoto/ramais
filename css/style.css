@@ -29,7 +29,7 @@ html {
 	flex-direction: column; 
 	align-content: center;
 	width: 40%;
-	min-width: 550px;
+	min-width: 520px;
 	max-width: 760px;
 	height: 100vh;
 	background-color: white;
